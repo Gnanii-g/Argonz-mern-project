@@ -96,13 +96,13 @@ export default function Dashboard() {
   useEffect(() => {
     // Fetch mentors
     axios
-      .get("http://localhost:5000/api/mentors")
+      .get("https://argonz-mern-project.onrender.com/api/mentors")
       .then((res) => setMentors(res.data))
       .catch((err) => console.error("Error fetching mentors:", err));
 
     // Fetch tasks
     axios
-      .get("http://localhost:5000/api/tasks")
+      .get("https://argonz-mern-project.onrender.com/api/tasks")
       .then((res) => {
         if (res.data && res.data.length > 0) {
           setUpcomingTasks(res.data); // override dummy tasks
@@ -117,7 +117,7 @@ export default function Dashboard() {
   const handleFollow = async (id) => {
     try {
       const res = await axios.put(
-        `http://localhost:5000/api/mentors/${id}/follow`
+        `https://argonz-mern-project.onrender.com/api/mentors/${id}/follow`
       );
       setMentors((prev) => prev.map((m) => (m._id === id ? res.data : m)));
     } catch (err) {
