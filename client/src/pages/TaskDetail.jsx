@@ -14,7 +14,7 @@ export default function TaskDetail() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/tasks/${id}`)
+      .get(`https://argonz-mern-project.onrender.com/api/tasks/${id}`)
       .then((res) => setTask(res.data))
       .catch((err) => console.error("Error fetching task:", err));
   }, [id]);
@@ -25,7 +25,7 @@ export default function TaskDetail() {
     formData.append("file", file);
 
     try {
-      await axios.post(`http://localhost:5000/api/tasks/${id}/upload`, formData, {
+      await axios.post(`https://argonz-mern-project.onrender.com/api/tasks/${id}/upload`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       alert("File uploaded successfully!");
