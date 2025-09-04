@@ -13,12 +13,12 @@ export default function Mentors() {
   }, []);
 
   const fetchMentors = async () => {
-    const res = await axios.get("http://localhost:5000/api/mentors");
+    const res = await axios.get("https://argonz-mern-project.onrender.com/api/mentors");
     setMentors(res.data);
   };
 
   const toggleFollow = async (id) => {
-    const res = await axios.put(`/api/mentors/${id}/follow`);
+    const res = await axios.put(`https://argonz-mern-project.onrender.com/api/mentors/${id}/follow`);
     setMentors((prev) =>
       prev.map((m) => (m._id === id ? res.data : m))
     );
