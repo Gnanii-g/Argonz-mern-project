@@ -14,7 +14,7 @@ export default function Tasks() {
 
     useEffect(() => {
         axios
-            .get("http://localhost:5000/api/tasks")
+            .get("https://argonz-mern-project.onrender.com/api/tasks")
             .then((res) => setTasks(res.data))
             .catch((err) => console.error("Error fetching tasks:", err));
     }, []);
