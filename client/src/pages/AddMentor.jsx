@@ -16,7 +16,7 @@ export default function AddMentor() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/mentors", formData);
+      await axios.post("https://argonz-mern-project.onrender.com/api/mentors", formData);
       alert("Mentor added successfully!");
       setFormData({ name: "", role: "", bio: "", avatar: "" });
     } catch (err) {
